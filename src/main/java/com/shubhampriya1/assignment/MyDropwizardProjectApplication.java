@@ -13,7 +13,7 @@ public class MyDropwizardProjectApplication extends Application<MyDropwizardProj
 
         if (args.length == 0) {
             new MyDropwizardProjectApplication().run("server",
-                    "C:\\Users\\shubh\\Downloads\\AssignmentDropwizard\\AssignmentDropwizard\\my-dropwizard-project\\config.yml");
+                    "C:\\Users\\shubh\\OneDrive\\Desktop\\my-dropwizard-project\\config.yml");
         } else {
             new MyDropwizardProjectApplication().run(args);
         }

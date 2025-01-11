@@ -26,21 +26,16 @@ public class Student {
 
     @GET
     public Response home() {
-        Map<String, Object> response = new HashMap<>();
-        response.put("message", "Welcome Home");
-        response.put("status", 200);
-        return Response.ok(response).build();
+        return Response.ok().entity(new ResponseDto("Welcome Home", 200)).build();
     }
 
     @GET
     @Path("/{userName}")
     public Response username(@PathParam("userName") String userName) {
-        // Optionally, add user to MongoDB
         Document user = new Document("name", userName);
         collection.insertOne(user);
 
-        ResponseDto responseDto = new ResponseDto("Welcome " + userName, 200);
-        return Response.ok().entity(responseDto).build();
+        return Response.ok().entity(new ResponseDto("Welcome " + userName, 200)).build();
     }
 
     @GET
